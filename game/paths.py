@@ -22,8 +22,12 @@ def runtime_root() -> Path:
 
 def user_data_dir() -> Path:
     if is_android():
-        from android.storage import app_storage_path
-        return Path(app_storage_path())
+        try:
+            from android.storage import app_storage_path
+            return Path(app_storage_path())
+        except (ImportError, Exception):
+            # Fallback for some android environments
+            return Path(".").resolve()
     return runtime_root()
 
 
