@@ -1,0 +1,74 @@
+{
+  "pause": [
+    "p"
+  ],
+  "save": [
+    "f5"
+  ],
+  "load": [
+    "f9"
+  ],
+  "select_all": [
+    "a"
+  ],
+  "camera_up": [
+    "w"
+  ],
+  "camera_down": [
+    "s"
+  ],
+  "camera_left": [
+    "a"
+  ],
+  "camera_right": [
+    "d"
+  ],
+  "zoom_in": [
+    "=",
+    "+"
+  ],
+  "zoom_out": [
+    "-",
+    "_"
+  ],
+  "build_base": [
+    "b"
+  ],
+  "build_turret": [
+    "t"
+  ],
+  "build_factory": [
+    "f"
+  ],
+  "build_airfield": [
+    "g"
+  ],
+  "train_infantry": [
+    "1"
+  ],
+  "train_tank": [
+    "2"
+  ],
+  "train_aircraft": [
+    "3"
+  ],
+  "group_assign": [
+    "left ctrl",
+    "right ctrl"
+  ],
+  "group_select_1": [
+    "1"
+  ],
+  "group_select_2": [
+    "2"
+  ],
+  "group_select_3": [
+    "3"
+  ],
+  "toggle_help": [
+    "h"
+  ],
+  "upgrade_tech": [
+    "u"
+  ]
+}
