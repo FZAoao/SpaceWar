@@ -61,37 +61,61 @@ DEFAULT_BINDINGS: Dict[str, Tuple[str, ...]] = {
 def load_video_settings() -> VideoSettings:
     path = CONFIG_DIR / "video.json"
     if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return VideoSettings(**data)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return VideoSettings(**data)
+        except Exception:
+            pass
     settings = VideoSettings()
-    path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    try:
+        path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
     return settings
 
 
 def load_audio_settings() -> AudioSettings:
     path = CONFIG_DIR / "audio.json"
     if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return AudioSettings(**data)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return AudioSettings(**data)
+        except Exception:
+            pass
     settings = AudioSettings()
-    path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    try:
+        path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
     return settings
 
 
 def load_game_settings() -> GameSettings:
     path = CONFIG_DIR / "game.json"
     if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return GameSettings(**data)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return GameSettings(**data)
+        except Exception:
+            pass
     settings = GameSettings()
-    path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    try:
+        path.write_text(json.dumps(settings.__dict__, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
     return settings
 
 
 def load_key_bindings() -> Dict[str, Tuple[str, ...]]:
     path = CONFIG_DIR / "bindings.json"
     if path.exists():
-        data = json.loads(path.read_text(encoding="utf-8"))
-        return {k: tuple(v) for k, v in data.items()}
-    path.write_text(json.dumps(DEFAULT_BINDINGS, ensure_ascii=False, indent=2), encoding="utf-8")
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return {k: tuple(v) for k, v in data.items()}
+        except Exception:
+            pass
+    try:
+        path.write_text(json.dumps(DEFAULT_BINDINGS, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
     return DEFAULT_BINDINGS.copy()
