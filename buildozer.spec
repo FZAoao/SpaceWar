@@ -32,7 +32,7 @@ source.include_exts = py,png,wav,json,ico
 
 # (list) Application requirements
 # Note: pygame on Android is supported through SDL2 bootstrap in recent python-for-android builds
-requirements = python3,pygame==2.6.1,cython
+requirements = python3,pygame==2.6.1,cython,android
 
 # (str) Choose the Python-for-Android bootstrap
 p4a.bootstrap = sdl2
